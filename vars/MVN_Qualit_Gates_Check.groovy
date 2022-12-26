@@ -53,7 +53,7 @@ def call(body) {
             }
             stage ('Code Quality') {
             environment {
-                scannerHome = tool ${args.sonar_scanner}
+                scannerHome = tool '${args.sonar_scanner}'
             }
             steps {
                 withSonarQubeEnv("${args.sonar_server}") {
