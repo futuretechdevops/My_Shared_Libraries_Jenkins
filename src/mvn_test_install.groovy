@@ -12,7 +12,7 @@ def call(body) {
     echo "INFO: ${args.branch}"
 
     
-    pipline {
+    pipeline {
         agent any
         tools {
             maven 'Maven-360' 
