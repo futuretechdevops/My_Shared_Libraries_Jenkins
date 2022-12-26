@@ -1,1 +1,2 @@
-dd
+def call() {
+  sh "echo Hello World"
