@@ -58,7 +58,7 @@ def call(body) {
             steps {
                 withSonarQubeEnv("${args.sonar_server}") {
                     sh "${scannerHome}/bin/sonar-scanner \
-                    -D sonar.projectKey="${args.projectKey}" \
+                    -D sonar.projectKey=${args.projectKey} \
                     -D sonar.exclusions=vendor/**,resources/**,**/*.java"
                 }
             }
