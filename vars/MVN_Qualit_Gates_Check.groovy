@@ -53,19 +53,19 @@ def call(body) {
             }
             stage ('Code Quality') {
             environment {
-                scannerHome = tool "args.sonar_scanner"
+                scannerHome = tool ${args.sonar_scanner}
             }
             steps {
-                withSonarQubeEnv("args.sonar_server") {
+                withSonarQubeEnv("${args.sonar_server}") {
                     sh "${scannerHome}/bin/sonar-scanner \
-                    -D sonar.projectKey="args.projectKey" \
+                    -D sonar.projectKey="${args.projectKey}" \
                     -D sonar.exclusions=vendor/**,resources/**,**/*.java"
                 }
             }
             }
             stage('SonarQube Quality Gates Check'){
             steps {
-                timeout(time: "args.timeout_time", unit: 'args.timeout_unit') {
+                timeout(time: "${args.timeout_time}", unit: "${args.timeout_unit}") {
                     waitForQualityGate abortPipeline: true
                 }
             }
