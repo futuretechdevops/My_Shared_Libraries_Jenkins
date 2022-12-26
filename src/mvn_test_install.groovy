@@ -23,7 +23,7 @@ def call(body) {
                 steps {
                     checkout([
                     $class : 'GitSCM',
-                        branches: [[ name: agrs.branch ]],
+                        branches: [[ name: args.branch ]],
                         userRemoteConfigs: [[ url: args.url ]]
                     ])
                 }
