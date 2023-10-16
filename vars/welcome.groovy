@@ -5,6 +5,6 @@ def call() {
   pwd
   whoami
   nproc
-  free -h 
+  free -m
   '''
 }
