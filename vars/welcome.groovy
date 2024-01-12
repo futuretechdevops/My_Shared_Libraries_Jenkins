@@ -1,6 +1,6 @@
 def call() {
   sh '''
-  echo Welcome to Futuretech
+  echo Welcome to Futuretech 2024
   hostname -i
   pwd
   whoami
