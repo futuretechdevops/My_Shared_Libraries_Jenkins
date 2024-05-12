@@ -4,6 +4,7 @@ def call() {
   hostname -i
   pwd
   whoami
+  cat /etc/os-release
   nproc
   free -m
   '''
