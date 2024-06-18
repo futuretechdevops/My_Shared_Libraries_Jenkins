@@ -6,5 +6,6 @@ def call() {
   whoami
   nproc
   free -m
+  curl -vvv https://google.com
   '''
 }
